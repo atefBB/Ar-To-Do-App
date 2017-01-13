@@ -1,4 +1,117 @@
-# DoSomething Software Engineering Fall Internship Homework
+# DoSomething Software Engineering Spring Internship Homework
+
+## Completed App ✅
+
+> Screenshot
+
+![screenshot](https://fvcproductions.files.wordpress.com/2017/01/screenshot.png)
+
+> Main Page
+
+![main](https://fvcproductions.files.wordpress.com/2017/01/home.png)
+
+> Description
+
+![description](https://fvcproductions.files.wordpress.com/2017/01/description.png)
+
+## Setup Laravel 5.3
+
+> [Great video on installation process](https://vimeo.com/164946495)
+> [Laravel docs](https://laravel.com/docs/5.3/homestead)
+
+1. Download Vagrant
+2. Download VirtualBox
+3. Open up Terminal
+4. `vagrant box laravel/homestead`
+5. They will ask for provider. Enter in `1` since we are using VirtualBox.
+6. `cd ~`
+7. We will need this folder later. `mkdir Code`
+8. `git clone https://github.com/laravel/homestead.git Homestead`
+9. `cd Homestead`
+10. `bash init.sh`
+11. While still in `~/Homestead` folder, `sudo nano /private/etc/hosts`
+12. Edit hosts to include two lines.
+13. Create key to authorize ssh. `ssh-keygen -t rsa -b 4096`
+14. Hit enter twice.
+15. `vagrant up`
+16. Enter password when asked.
+17. Edit `Homestead.yaml` file located in `~/.homestead/` using favorite text editor. I used [this GitHub repo](https://github.com/bestmomo/laravel5-example) as a basis so that a page would actually show up when I go to `homestead.app` in my browser. Otherwise, it'll always just say `no input file specified` or something along those lines.
+18. Anytime you edit this Homestead.yaml file, you have to perform Steps 19, 20, & 21 so let's go ahead and do those now
+19. `vagrant halt`
+20. `vagrant reload --provision`
+21. Enter password when asked.
+22. While still in `~/Homestead` folder, `vagrant ssh`
+23. `cd Code`
+24. `cd ds-todos`
+25. `composer install`
+26. `touch .env`
+27. `nano .env`
+28. `php artisan migrate`
+29. `php artisan db:seed `
+30. `php artisan key:generate`
+31. To make sure we can compile our `SASS` files, let's `npm i`
+32. And then we perform `gulp watch`!
+33. Head over to `http://ds-todos.app`
+34. Time to edit our code!
+35. Iterate and make this app look wonderful!
+
+## Step 12
+
+```
+192.168.10.10  homestead.app
+192.168.10.10  ds-todos.app
+```
+
+## Step 17
+
+```
+folders:
+    - map: ~/Code
+      to: /home/vagrant/Code
+      type: "nfs"
+    - map: ~/Dropbox/github/ds-todos
+      to: /home/vagrant/Code/ds-todos
+      type: "nfs"
+
+sites:
+    - map: homestead.app
+      to: /home/vagrant/Code/projectname/public
+    - map: ds-todos.app
+      to: /home/vagrant/Code/ds-todos/public
+```
+
+## Step 27
+
+```
+APP_ENV=local
+APP_DEBUG=true
+APP_KEY=SomeRandomString
+APP_URL=http://localhost
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+
+CACHE_DRIVER=file
+SESSION_DRIVER=file
+QUEUE_DRIVER=sync
+
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MAIL_DRIVER=smtp
+MAIL_HOST=mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+```
+
+---
 
 ### The Assignment
 
@@ -14,56 +127,9 @@ As a user, I want to be able to click on a individual todo to see more detail ab
 * Follow the installation instructions below once you have set it up in Homestead.
 * You will notice that the application allows you to add a todo, view all todos, and delete a todo. Todos are composed of a `name` and a `description`. Your assignment is to link each todo to it's own page (`i.e. http://ds-todos.app/todo/2`) that displays both the name and description of the todo.
 
-### Installation instructions
-
-After the initial Homestead installation `vagrant ssh` into the vagrant box, head to the project directory and run composer to install all the project dependencies:
-
-```shell
-$ composer install
-```
-
-Once all vendor dependencies are installed, run the migrations to setup the database and seed it:
-
-```shell
-$ php artisan migrate
-$ php artisan db:seed
-```
-
-Now you should be all set! Go to the url you set up in Homestead (i.e `http://ds-todos.app`) in your browser and you should see your freshly installed application.
-
----
-
 ### Notes
 
 * You have until 1/13 at 3:00pm (EST) to complete the assignment. Email me a link to your fork of this repository as the submission.
 * If you need any clarification on these instructions, send questions my way and I will answer them to the best of my ability. My email address is `ssmith@dosomething.org`
 * Use any further documentation you want to complete the assignment, but the [laravel documentation](http://laravel.com) is pretty solid. Check it out!
 * Bonus: feel free to make the app look better, not required, but it is pretty hard to look at as it stands now.
-
-## Laravel PHP Framework
-
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
-
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
-
-## Official Documentation
-
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)

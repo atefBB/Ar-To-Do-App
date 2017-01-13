@@ -1,0 +1,80 @@
+/* theme colors */
+/* Space out content a bit */
+body {
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif; }
+
+/* Custom page footer */
+.footer {
+  padding-top: 1.5rem;
+  border-top: .05rem solid #e5e5e5;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  color: #818a91; }
+
+/* Customize container */
+@media (min-width: 48em) {
+  .container {
+    max-width: 46rem; } }
+
+.container-narrow > hr {
+  margin: 2rem 0; }
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: .05rem solid #e5e5e5;
+  background: #4e2b63;
+  /* For browsers that do not support gradients */
+  /* For Safari 5.1 to 6.0 */
+  /* For Opera 11.1 to 12.0 */
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#222, #4e2b63);
+  /* Standard syntax */
+  color: white;
+  padding: 2rem 1rem; }
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 48em) {
+  /* Remove the padding we set earlier */
+  .header,
+  .footer {
+    padding-right: 0;
+    padding-left: 0; }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 2rem; }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0; } }
+
+/* buttons and labels */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: 'Montserrat', sans-serif; }
+
+.todos label {
+  font-size: larger;
+  font-weight: bold; }
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-danger:hover {
+  background-color: #222;
+  border-color: #222;
+  color: white !important; }
+
+.btn-primary {
+  background-color: #4e2b63;
+  border-color: #4e2b63; }
+
+.btn-secondary {
+  background-color: #23b7fb;
+  border-color: #23b7fb;
+  color: white; }
+
+/*# sourceMappingURL=app.css.map */
