@@ -1,1 +1,1 @@
-# Arabic Translation of ![ToDo App](https://github.com/fvcproductions/ds-todos)
+# Arabic Translation of [ToDo App](https://github.com/fvcproductions/ds-todos)
