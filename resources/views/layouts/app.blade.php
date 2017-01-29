@@ -54,7 +54,7 @@
             </div>
             @yield('content')
             <footer class="footer">
-                <p>&copy; ToDo App 2017</p>
+                <!--p>&copy; ToDo App 2017</p-->
             </footer>
         </div>
     </body>
