@@ -1,1 +1,1 @@
-# Arabic Version of [ToDo App](https://github.com/fvcproductions/ds-todos)
+# Arabic Version of [DS Intern Todo App](https://github.com/fvcproductions/ds-todos)
