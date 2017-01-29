@@ -8,4 +8,5 @@ return [
     'add'       		=> 'Add',
     'delete'       		=> 'Delete',
     'what-s-left-to-do' => 'What\'s Left To Do',
+    'back'              => 'BACK TO ALL TO-DOS',
 ];

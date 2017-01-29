@@ -10,12 +10,16 @@
 <!-- displays to-do & description -->
 <div class="panel panel-default mt-3">
     <div class="panel-body">
-        <a href="{{url('todo')}}"><h3 class="mb-4">⬅ BACK TO ALL TO-DOS</h3></a>
+        <a href="{{url('todo')}}">
+           <h3 class="mb-4">
+              ⬅ {{ trans('todo.back') }}
+           </h3>
+        </a>
         @if ((!empty($todo->name)) && !empty($todo->description))
             <table class="table table-striped todo-table">
                 <thead>
-                    <th>Name</th>
-                    <th>Description</th>
+                    <th>{{ trans('todo.add-name') }}</th>
+                    <th>{{ trans('todo.add-desc') }}</th>
                 </thead>
                 <tr>
                     <!-- name -->
